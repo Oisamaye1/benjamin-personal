@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ovioisa Oisamaye Benjamin Resume</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    
+
+    <div class="empty-space flex-column flex-shrink-0" style="width: 5%;">
+    </div>
+    <div class="d-flex navigation flex-column flex-shrink-0 p-3">
+      <div class=" main-nav-container " >
+        <div class="nav-container">
+          <a href="/" class="d-flex align-items-center mb-3  mt-4 text-white text-decoration-none"> 
+            <span class=" logo">Benjamin<span style="color: #E71D36; font-size: 40px;">.</span></span>
+          </a>
+          <hr>
+
+          <div class="navbar ">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a href="#" class="text-white">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#about" class="text-white">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="#education" class="text-white">Education</a>
+              </li>
+              <li class="nav-item">
+                <a href="#experience" class="text-white">Experience</a>
+              </li>
+              <li class="nav-item">
+                <a href="#projects" class="text-white">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a href="#hobbies" class="text-white">Hobbies</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contact" class="text-white">Contact</a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="nav-social-link">
+            <a href="#" class="fs-5 text-white text-decoration-none"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="fs-5 text-white text-decoration-none"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="fs-5 text-white text-decoration-none"><i class="fa-brands fa-pinterest-p"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="d-flex main flex-nowrap">
+    
+      <div class="body-empty-space flex-column flex-shrink-0" style="width: 5%;">
+      </div>
+      
+
+<!-- -----------------------Main body starts here----------------- -->
+
+      <div class="main-container" style="min-width: 70%;">
+        <div class="bg-light hero-box">
+          <div class="container-fluid hero-info py-5">
+            
+            <div class="menu-toggle">
+              <div class="hamburger">
+                <span></span>
+              </div>
+            </div>
+
+            <h4 style="color: #E71D36;">Hello, I'm</h4>
+            <br>
+            <h1 class="display-5 fw-bold">Ovioisa</h1>
+            <h1 class="display-5 fw-bold">Oisamaye Benjamin</h1>
+            <br><br>
+            <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+            <br><br>
+            <h3>Fullstack Developer</h3>
+          </div>
+          <div class="hero-img">
+            
+          </div>
+        </div>
+
+        <div class="call-to-action">
+          <a download href="../static/images/resume.pdf" class="text-white btn-1 text-decoration-none">DOWNLOAD RESUME</a>
+          <a href="https://github.com/Oisamaye1" target="_blank" class="text-white btn-2 text-decoration-none">VIEW PORTFOLIO</a>
+        </div>
+
+
+        <!-- About Section -->
+
+        <div id="about" class="bg-light p-3">
+          <div class="container-fluid py-5">
+            <h2 class="display-5 fw-bold">About</h2>
+            <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+            <br><br>
+            <h3 style="color: rgb(97, 97, 97);">Creative and Passionate</h3>
+            <br>
+            <p style="color: rgb(97, 97, 97);" class="fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Culpa ratione molestias quaerat. Quae libero, cum dolorum 
+              impedit est optio maiores soluta quibusdam esse non labore 
+              veniam dolore perspiciatis pariatur exercitationem.</p>
+          </div>
+        </div>
+
+        <!-- Education Section -->
+
+        <div id="education" class="bg-light p-3">
+          <div class="container-fluid py-5">
+            <h2 class="display-5 fw-bold">Education</h2>
+            <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+            <br><br>
+            <h3 style="color: rgb(97, 97, 97);">Educations and Programs</h3>
+            <br><br>
+            
+            <div class="education-box">
+              {% for edu in education %}
+              <div class="education-item">
+                <h1>.</h1>
+                <p style="color: rgb(97, 97, 97);" class="fs-5"> {{edu["year"]}} </p>
+                <h3>{{edu["school"]}}</h3>
+                <h4 style="color: rgb(97, 97, 97);">{{edu["location"]}}</h4>
+                <h4 style="color: #151b25;">{{edu["degree"]}}</h4>
+              </div>
+              
+              {% endfor %}
+
+            </div>
+
+          </div>
+        </div>
+
+         <!-- Experience Section -->
+
+         <div id="experience" class="bg-light p-3">
+          <div class="container-fluid py-5">
+            <h2 class="display-5 fw-bold">Experience</h2>
+            <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+            <br><br>
+            <h3 style="color: rgb(97, 97, 97);">Experience and Skills</h3>
+            <br><br>
+            
+            <div class="education-box">
+              {% for exp in experience %}
+              <div class="education-item">
+                <h1>.</h1>
+                <p style="color: rgb(97, 97, 97);" class="fs-5">{{exp["year"]}}</p>
+                <h3>{{exp["role"]}}</h3>
+                <h4 style="color: rgb(97, 97, 97);">{{exp["company"]}}</h4>
+                <h4 style="color: rgb(97, 97, 97);">{{exp["location"]}}</h4>
+              </div>
+               {% endfor %}
+
+            </div>
+
+          </div>
+        </div>
+
+         <!-- project section -->
+
+         <div id="projects" class="bg-light p-3">
+          <div class="container-fluid py-5">
+            <h2 class="display-5 fw-bold">Projects</h2>
+            <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+            <br><br>
+            <h3 style="color: rgb(97, 97, 97);">Skilled & Experienced</h3>
+            <br><br>
+
+            <div class="projects-box">
+
+              <a href="#" class="project-item" style="background-image: url('../static/images/static\ prof\ pics.jpg'); background-size: cover; background-repeat: no-repeat;">
+                <div class="proj-it">
+                  <div class="project-slide py-3">
+                    <h3 class="fs-2 fw-bold">Custom jumbotron</h3>
+                    <p class="col-md-8 fs-5">Using a series of utilities.</p>
+                  </div>
+                </div>  
+              </a>
+              <a href="#" class="project-item" style="background-image: url('../static/images/static\ prof\ pics.jpg'); background-size: cover; background-repeat: no-repeat;">
+                <div class="proj-it">
+                  <div class="project-slide py-3">
+                    <h3 class="fs-2 fw-bold">Custom jumbotron</h3>
+                    <p class="col-md-8 fs-5">Using a series of utilities.</p>
+                  </div>
+                </div>  
+              </a>
+              <a href="#" class="project-item" style="background-image: url('../static/images/static\ prof\ pics.jpg'); background-size: cover; background-repeat: no-repeat;">
+                <div class="proj-it">
+                  <div class="project-slide py-3">
+                    <h3 class="fs-2 fw-bold">Custom jumbotron</h3>
+                    <p class="col-md-8 fs-5">Using a series of utilities.</p>
+                  </div>
+                </div>  
+              </a>
+              <a href="#" class="project-item" style="background-image: url('../static/images/static\ prof\ pics.jpg'); background-size: cover; background-repeat: no-repeat;">
+                <div class="proj-it">
+                  <div class="project-slide py-3">
+                    <h3 class="fs-2 fw-bold">Custom jumbotron</h3>
+                    <p class="col-md-8 fs-5">Using a series of utilities.</p>
+                  </div>
+                </div>  
+              </a>
+            </div>
+
+            <div>
+              <a href="#"><button>SHOW MORE</button></a>
+            </div>
+            <br><br><br><br>
+
+            <div class="skills">
+              <h2 class="display-5 fw-bold">Skills</h2>
+              <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+              <br><br>
+
+              <div class="skills-list-box">
+                <div class="skills-list fs-5" style="color: rgb(255, 255, 255);">
+                  <h3 class="fs-2">Development Skills</h3>
+                  <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>Javascript</li>
+                    <li>Python (Flask Framework)</li>
+                    <li>MySQL</li>
+                    <li>M.E.R.N Stack (MongoDB, ExpressJS, React, NodeJS)</li>
+                  </ul>
+                </div>
+  
+                <div class="skills-list fs-5" style="color: rgb(255, 255, 255);">
+                  <h3 class="fs-2">Other Skills</h3>
+                  <ul>
+                    <li>Photo Editing</li>
+                    <li>Graphics Design</li>
+                    <li>Microsoft Office Tools</li>
+                    <li>Python (Flask Framework)</li>
+                  </ul>
+                </div>
+              </div>
+              
+              
+            </div>
+
+          <br><br><br>
+          </div>
+        </div>
+
+        <!-- Hobbies Section -->
+
+        <div id="hobbies" class="bg-light p-3">
+          <div class="container-fluid py-5">
+            <h2 class="display-5 fw-bold">Hobbies</h2>
+            <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+            <br><br>
+            <h3 style="color: rgb(97, 97, 97);">Cheerful & Enthusiastic</h3>
+            <br><br>
+
+            <div class="hobbies-icon">
+              <div class="hobbies-icon-box">
+                <i class="fa-solid fa-chalkboard"></i>
+                <p>LEARNING</p>
+              </div>
+              <div class="hobbies-icon-box">
+                <i class="fa-solid fa-gamepad"></i>
+                <p>GAMING</p>
+              </div>
+              <div class="hobbies-icon-box">
+                <i class="fa-solid fa-film"></i>
+                <p>MOVIE</p>
+              </div>
+              <div class="hobbies-icon-box">
+                <i class="fa-solid fa-car"></i>
+                <p>TRAVELLING</p>
+              </div>
+              <div class="hobbies-icon-box">
+                <i class="fa-solid fa-music"></i>
+                <p>MUSIC</p>
+              </div>
+            </div>
+          </div>
+          <br><br><br>
+        </div>
+
+        <!-- Contact Section -->
+
+        <div id="contact" class="bg-light p-3">
+          <div class="container-fluid py-5">
+            <h2 class="display-5 fw-bold">Contact</h2>
+            <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+            <br><br>
+            <h3 style="color: rgb(97, 97, 97);">Send a message</h3>
+            <br><br>
+
+            <div class="contact-box">
+
+              <div class="contact-form">
+                <form action="/" method="post" >
+                  {{ form.name.label(class="form-label fs-5") }}
+                  {{ form.name(class="form-control ") }}
+                  <br>
+                  {{ form.email.label(class="form-label fs-5") }}
+                  {{form.email(class="form-control")}}
+                  <br>
+                  {{ form.message.label(class="form-label fs-5") }}
+                  {{form.message(class="form-control message")}}
+                  <br>
+                  {{form.submit(class="btn btn-dark fs-5")}}
+              </form>
+              </div>
+
+              <div class="contact-info">
+                <div class="contact-gradient">
+                    <h3 class="fs-2 fw-bold">Get in touch</h3>
+                    <h4 class="col-md-8 fs-4">All contact details are available</h4>
+                    <br>
+                    <p class="col-md-8 fs-5">P - 123456789</p>
+                    <p class="col-md-8 fs-5">E - Example@email.com</p>
+                    <p class="col-md-8 fs-5">A - Location, address, country.</p>
+                </div>
+              </div>  
+
+            </div>
+          <br>
+          </div>
+          <div class="copyright">
+            <p>©2022, Jami Legacy - Footware</p>
+          </div>
+        </div>
+
+      </div>
+    
+    </main>
+    <script src="../static/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/fccee44b03.js" crossorigin="anonymous"></script>
+  </body>
+</html>
