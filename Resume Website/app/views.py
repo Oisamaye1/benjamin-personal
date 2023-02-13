@@ -101,19 +101,20 @@ def index():
   email = form.email.data
   message = form.message.data
 
-  print(name, email, message)
+  # print(name, email, message)
 
-  if request.method == 'POST' and form.validate():
-     email_alert("New Message from contact form", 
-     f"Message from {name} with email address {email}, \n {message}", 
-     "Ovibenz@gmail.com")
-     return redirect(url_for("index"))
+  if request.method == 'POST':
+    email_alert("New Message from contact form", 
+    f"Message from {name} with email address {email}, \n\n {message}", 
+    "Ovibenz@gmail.com")
+    return redirect(url_for("index"))
 
 
   return render_template("index.html", form = form,
   education=education,
   experience=experience, 
   current_time = datetime.utcnow())
+
 
 
 def email_alert(subject, body, to):
@@ -124,7 +125,7 @@ def email_alert(subject, body, to):
 
     userEmail = "oisamayebenjamin@gmail.com"
     message['from'] = userEmail
-    password = ""
+    password = app.config['E_PASSWORD']
 
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()
