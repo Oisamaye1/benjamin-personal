@@ -119,6 +119,7 @@ def index():
     email_alert("New Message from contact form", 
     f"Message from {name} with email address {email}, \n\n {message}", 
     "Ovibenz@gmail.com")
+    flash("Message sent successfully")
     return redirect(url_for("index"))
 
 

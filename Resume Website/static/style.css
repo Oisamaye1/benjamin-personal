@@ -11,6 +11,20 @@ body{
     position: relative;
 }
 
+.main-container .alert{
+    text-align: center;
+    position: fixed;
+    left: 50px;
+    right: 50px;
+    margin: 10px 20px;
+   font-size: 20px;
+   z-index: 3;
+   background-color: orangered;
+   border: none;
+   color: white;
+}
+
+
 .logo{
     font-size: 35px;
 }
@@ -72,10 +86,10 @@ body{
 .menu-toggle{
     display: none;
     position: fixed;
-    top: 2rem;
-    right: 2rem;
-    width: 60px;
-    height: 60px;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color: #151b25;
     cursor: pointer;
@@ -132,7 +146,7 @@ body{
 }
 
 .main-container{
-    
+    position: relative;
     background-color: rgba(255, 255, 255, 0.192);
     padding: 2%;
 }
@@ -229,13 +243,7 @@ body{
 .proj-it{
     padding: 20px 20px 20px 0px;
     height: 100%;
-    background-color: rgba(255, 0, 0, 0);
-    position: absolute;
-    content-visibility: hidden;
-    width: 200%;
-    transition: 0.6s;
-    left: -100%;
-    overflow: hidden;
+    background-color: rgba(255, 0, 0, 0);  
 }
 
 .proj-it .project-slide{
@@ -243,21 +251,48 @@ body{
     color: rgb(255, 255, 255);
     height: 100%;
     width: 100%;
-    text-align: left;
     padding-left: 30px;
     flex-direction: column;
     justify-content: center;
     display: flex;
 }
 
-.proj-it:hover
-{
-    left: 0%;
-    width: 100%;
-    content-visibility: visible;
+.proj-it .project-slide p{
+    font-size: 14px;
 }
 
-#projects button{
+.proj-tech h4{
+    font-size: 16px;
+}
+
+.proj-tech ul{
+    font-size: 10px;
+    display: flex;
+    gap: 20px;
+    padding: 0px;
+    list-style: none;
+}
+
+.proj-tech i{
+    color: orangered;
+    margin-right: 3px;
+}
+
+.proj-btn{
+    display: flex;
+}
+
+.proj-btn .proj-btn-1,
+.proj-btn .proj-btn-2{
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    margin: 0px 3px;
+    font-size: 14px;
+    background-color: orangered;
+    color: white;
+}
+
+#projects .proj-show-more-btn{
     padding: 15px 0px;
     width: 100%;
     background-color: transparent;
@@ -267,28 +302,38 @@ body{
     text-align: center;
     color: #151b25;
     text-align: center;
-
 }
 
-#projects button:hover{
+#projects .proj-show-more-btn:hover{
     background-color: #151b25;
     color: white;
     
 }
 
-.skills-list-box{
-    background-color: #151b25;
-    padding: 50px;
+.skills-list-box{  
     display: flex;
-    gap: 100px;
+    flex-wrap: wrap;
+    gap: 2%;
 }
 
-.skills-list-box ul{
-    padding: 0px;
+.skills-list ul{
+    padding-left: 10px;
 }
 
-.skills-list{
-    width: 50%;
+.skills-list-box .skills-list{
+    padding: 40px 40px;
+    width: 23%;
+    background-color: #151b25;
+    border-radius: 10px;
+    margin-bottom: 2%;
+}
+
+.skills-list .skills-list-icon{
+   font-size: 80px;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   padding-bottom: 20px;
 }
 
 /* education section starts */
@@ -302,7 +347,7 @@ body{
     position: relative;
     padding-left: 40px;
     width: 50%;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .education-item h1{
@@ -332,6 +377,7 @@ body{
 .contact-form .btn{
     border-radius: 0%;
     padding: 10px 15px;
+    width: 100%;
 }
 .contact-box .contact-info{
     width: 50%;
@@ -358,23 +404,39 @@ body{
 
 @media screen and (max-width: 920px),
 screen and (max-height: 800px){
+    #about p{
+        font-size: 16px;
+    }
+    
     .education-box{
-        display: block;
+        display: flex;
         
     }
 
     .education-item{ 
-        width: 100%;
+        width: 50%;
+    }
+    .education-item p{
+        color: rgb(97, 97, 97);
+        font-size: 16px;
+    }
+    
+    .education-item h3{
+        font-size: 18px;
+    }
+    
+    .education-item h4{
+        font-size: 16px;
     }
  
     
     .project-item{
         width: 100%;
-        height: 200px;
+        height: 400px;
     }
     
-    #projects button{
-        padding: 12px 0px;
+    #projects .proj-show-more-btn{
+        padding: 10px 0px;
         font-size: 15px;
     }
 
@@ -390,9 +452,33 @@ screen and (max-height: 800px){
         width: 100%;
         margin-top: 40px;
     }
-    .skills-list-box{
-        gap: 50px;
+
+    .skills-list-box{  
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2%;
     }
+    
+    .skills-list ul{
+        padding-left: 10px;
+    }
+    
+    .skills-list-box .skills-list{
+        padding: 40px 40px;
+        width: 48%;
+        background-color: #151b25;
+        border-radius: 10px;
+        margin-bottom: 2%;
+    }
+
+    .skills-list .skills-list-icon{
+       font-size: 80px;
+       text-align: center;
+       display: flex;
+       justify-content: center;
+       padding-bottom: 20px;
+    }
+
     .hobbies-icon{
         display: block;
     }
@@ -428,6 +514,10 @@ screen and (max-height: 800px){
 }
 
 @media screen and (max-width: 768px){
+    .alert{
+       font-size: 8px;
+    }
+
     .logo{
         font-size: 25px;
     }
@@ -459,7 +549,8 @@ screen and (max-height: 800px){
 /* hero ends here */
 
 .education-item{
-    margin-bottom: 40px;
+    width: 100%;
+    margin-bottom: 30px;
     padding-left: 30px;
 }
 
@@ -469,33 +560,42 @@ screen and (max-height: 800px){
 }
 
 .education-item h3{
-    font-size: 20px;
-}
-
-.education-item h4{
     font-size: 18px;
 }
 
+.education-item h4{
+    font-size: 14px;
+}
+
 .education-item h1{
-    margin-top: -52px;
-    font-size: 70px;
+    margin-top: -32px;
+    font-size: 50px;
     color: #E71D36;
 }
 
 /* education ends here */
 
-    .skills-list-box{
-        padding: 30px;
-        display: flex;
-        gap: 50px;
+.proj-tech ul{
+    font-size: 10px;
+    display: inline-block;
+    gap: 5px;
+}
+
+.proj-tech i{
+    color: orangered;
+    margin-right: 3px;
+}
+
+    .skills-list-box .skills-list{
+    width: 100%;
     }
     
     .skills-list-box h3{
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .skills-list-box li{
-        font-size: 14px;
+        font-size: 12px;
     }
 /* skill ends here */
 

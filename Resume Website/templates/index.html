@@ -54,7 +54,6 @@
           </div>
           
           <div class="nav-social-link">
-            <a href="https://www.instagram.com/ben_triple_z/" target="_blank" class="fs-5 text-white text-decoration-none"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/ovioisa-oisamaye-benjamin-93998019b" target="_blank" class="fs-5 text-white text-decoration-none"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="https://github.com/Oisamaye1" target="_blank" class="fs-5 text-white text-decoration-none"><i class="fa-brands fa-github"></i></a>
           </div>
@@ -63,14 +62,25 @@
     </div>
 
     <main class="d-flex main flex-nowrap">
-    
+
+      
+
       <div class="body-empty-space flex-column flex-shrink-0" style="width: 5%;">
       </div>
       
 
 <!-- -----------------------Main body starts here----------------- -->
-
+      
       <div class="main-container" style="min-width: 70%;">
+         
+        {% for message in get_flashed_messages() %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <i class="fa-solid fa-circle-check"></i> {{message}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+          
+
         <div class="bg-light hero-box">
           <div class="container-fluid hero-info py-5">
             
@@ -89,9 +99,7 @@
             <br>
             <h3>Fullstack Developer</h3>
           </div>
-          <div class="hero-img">
-            
-          </div>
+          <div class="hero-img"></div>
         </div>
 
         <div class="call-to-action">
@@ -109,27 +117,7 @@
             <br><br>
             <h3 style="color: rgb(97, 97, 97);">Creative and Passionate</h3>
             <br>
-            <p>I'm a highly motivated 
-              and enthusiastic full-stack web developer with a passion for creating 
-              user-friendly and visually appealing websites. Despite having little prior 
-              work experience, I have honed my skills through various online courses 
-              and personal projects.</p>
-              <p>I have a strong 
-                understanding of HTML, CSS, JavaScript, and the React front-end 
-                framework. On the back-end, I have experience working with Node.js 
-                and Express, Python (Flask Framework) and have a good understanding of 
-                databases and server-side architecture.
-              </p>
-              <p>I'm always eager to 
-                learn and am constantly seeking new challenges to push my abilities. 
-                I have excellent problem-solving skills and a knack for thinking 
-                outside the box to come up with creative solutions.
-              </p>
-              <p>Let me put my passion 
-                for web development to work for you! Whether it's creating a beautiful 
-                website or tackling a complex project, I'm ready and eager to jump in.
-              </p>
-              <br>
+            <p>I'm a highly motivated and enthusiastic full-stack web developer and I've developed my skills through various online courses and personal projects. I have a strong understanding of HTML, CSS, JavaScript, React, Node.js, Express, Python (Flask Framework), databases, and server-side architecture. I have excellent problem-solving skills and I'm always seeking new challenges to push my abilities. I am eager to apply my passion for web development to create visually appealing websites and tackle complex projects.</p>
           </div>
         </div>
 
@@ -151,12 +139,9 @@
                 <h3>{{edu["school"]}}</h3>
                 <h4 style="color: rgb(97, 97, 97);">{{edu["location"]}}</h4>
                 <h4 style="color: #151b25;">{{edu["degree"]}}</h4>
-              </div>
-              
+              </div>   
               {% endfor %}
-
             </div>
-
           </div>
         </div>
 
@@ -174,15 +159,13 @@
               {% for exp in experience %}
               <div class="education-item">
                 <h1>.</h1>
-                <p style="color: rgb(97, 97, 97);" class="fs-5">{{exp["year"]}}</p>
+                <p style="color: rgb(97, 97, 97);">{{exp["year"]}}</p>
                 <h3>{{exp["role"]}}</h3>
                 <h4 style="color: rgb(97, 97, 97);">{{exp["company"]}}</h4>
                 <h4 style="color: rgb(97, 97, 97);">{{exp["location"]}}</h4>
               </div>
                {% endfor %}
-
             </div>
-
           </div>
         </div>
 
@@ -198,44 +181,36 @@
 
             <div class="projects-box">
 
-              <a href="#" class="project-item" style="background-image: url('../static/images/static\ prof\ pics.jpg'); background-size: cover; background-repeat: no-repeat;">
+              <div href="#" class="project-item" style="background-image: url('../static/images/exercise\ app\ desktop.PNG'); background-size: cover; background-repeat: no-repeat;">
                 <div class="proj-it">
                   <div class="project-slide py-3">
-                    <h3 class="fs-2 fw-bold">Custom jumbotron</h3>
-                    <p class="col-md-8 fs-5">Using a series of utilities.</p>
+                    <h3 class="fs-2 fw-bold">Exercise Generator App</h3>
+                    <p class="col-md-8">These app random generates exercises for the user and the activities of all users are recorded and stored on the SqlAlchemy database</p>
+                    <div class="proj-btn">
+                      <a href="https://exercise-app.herokuapp.com/get_exercise?"><button class="proj-btn-1"><i class="fa-solid fa-eye"></i> Live Project</button></a>
+                      <a href="https://github.com/Oisamaye1/exercise-app"><button class="proj-btn-2"><i class="fa-solid fa-code"></i> Source Code</button></a>
+                    </div>
+                    <br><br>
+
+                    <div class="proj-tech">
+                      <h4>Technologies used</h4>
+                      <ul>
+                        <li><i class="fa-solid fa-circle-check"></i>HTML5</li>
+                        <li><i class="fa-solid fa-circle-check"></i>CSS3</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Javascript</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Python (Flask)</li>
+                        <li><i class="fa-solid fa-circle-check"></i>SqlAlchemy</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>  
-              </a>
-              <a href="#" class="project-item" style="background-image: url('../static/images/static\ prof\ pics.jpg'); background-size: cover; background-repeat: no-repeat;">
-                <div class="proj-it">
-                  <div class="project-slide py-3">
-                    <h3 class="fs-2 fw-bold">Custom jumbotron</h3>
-                    <p class="col-md-8 fs-5">Using a series of utilities.</p>
-                  </div>
-                </div>  
-              </a>
-              <a href="#" class="project-item" style="background-image: url('../static/images/static\ prof\ pics.jpg'); background-size: cover; background-repeat: no-repeat;">
-                <div class="proj-it">
-                  <div class="project-slide py-3">
-                    <h3 class="fs-2 fw-bold">Custom jumbotron</h3>
-                    <p class="col-md-8 fs-5">Using a series of utilities.</p>
-                  </div>
-                </div>  
-              </a>
-              <a href="#" class="project-item" style="background-image: url('../static/images/static\ prof\ pics.jpg'); background-size: cover; background-repeat: no-repeat;">
-                <div class="proj-it">
-                  <div class="project-slide py-3">
-                    <h3 class="fs-2 fw-bold">Custom jumbotron</h3>
-                    <p class="col-md-8 fs-5">Using a series of utilities.</p>
-                  </div>
-                </div>  
-              </a>
+              </div>
             </div>
 
             <div>
-              <a href="#"><button>SHOW MORE</button></a>
+              <a href="https://github.com/Oisamaye1?tab=repositories"><button class="proj-show-more-btn">SHOW MORE</button></a>
             </div>
-            <br><br><br><br>
+            <br><br>
 
             <div class="skills">
               <h2 class="display-5 fw-bold">Skills</h2>
@@ -243,32 +218,52 @@
               <br><br>
 
               <div class="skills-list-box">
+
                 <div class="skills-list" style="color: rgb(255, 255, 255);">
-                  <h3>Development Skills</h3>
+                  <i class="fa-solid skills-list-icon fa-desktop"></i>
+                  <h3>Frontend Skills</h3>
                   <ul>
                     <li>HTML5</li>
                     <li>CSS3</li>
+                    <li>Bootstrap</li>
                     <li>Javascript</li>
-                    <li>Python (Flask Framework)</li>
-                    <li>MySQL</li>
-                    <li>M.E.R.N Stack (MongoDB, ExpressJS, React, NodeJS)</li>
+                    <li>React</li>
                   </ul>
                 </div>
-  
-                <div class="skills-list fs-5" style="color: rgb(255, 255, 255);">
-                  <h3 class="fs-2">Other Skills</h3>
+
+                <div class="skills-list" style="color: rgb(255, 255, 255);">
+                  <i class="fa-solid skills-list-icon fa-database"></i>
+                  <h3>Backend Skills</h3>
                   <ul>
-                    <li>Photo Editing</li>
-                    <li>Graphics Design</li>
-                    <li>Microsoft Office Tools</li>
+                    <li>Python (Flask)</li>
+                    <li>NodeJS</li>
+                    <li>MongoDB</li>
+                    <li>ExpressJS</li>
+                    <li>MySQL</li>
+                  </ul>
+                </div>
+
+                <div class="skills-list" style="color: rgb(255, 255, 255);">
+                  <i class="fa-solid skills-list-icon fa-toolbox"></i>
+                  <h3>Other Skills</h3>
+                  <ul>
+                    <li>Wordpress</li>
+                    <li>Git & Github</li>
+                    <li>OpenCV</li>
+                  </ul>
+                </div>
+
+                <div class="skills-list" style="color: rgb(255, 255, 255);">
+                  <i class="fa-solid skills-list-icon fa-palette"></i>
+                  <h3>Design Skills</h3>
+                  <ul>
+                    <li>Adobe Photoshop</li>
+                    <li>Adobe Illustrator</li>
+                    <li>Canva</li>
                   </ul>
                 </div>
               </div>
-              
-              
             </div>
-
-          <br><br><br>
           </div>
         </div>
 
@@ -305,7 +300,6 @@
               </div>
             </div>
           </div>
-          <br><br><br>
         </div>
 
         <!-- Contact Section -->
@@ -340,9 +334,7 @@
                     <h3 class="fs-2 fw-bold">Get in touch</h3>
                     <h4 class="col-md-8 fs-5">All contact details are available</h4>
                     <br>
-                    <p class="col-md-8 fs-6">P - +2348130183417</p>
                     <p class="col-md-8 fs-6">E - ovibenz@gmail.com</p>
-                    <p class="col-md-8 fs-6">A - Lefkosa, TRNC, Mersin10 Turkey.</p>
                 </div>
               </div>  
 
