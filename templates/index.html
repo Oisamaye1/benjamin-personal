@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ovioisa Oisamaye Benjamin Resume</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    
+
+    <div class="empty-space flex-column flex-shrink-0" style="width: 5%;">
+    </div>
+    <div class="d-flex navigation flex-column flex-shrink-0 p-3">
+      <div class=" main-nav-container " >
+        <div class="nav-container">
+          <a href="/" class="d-flex logo-class align-items-center text-white text-decoration-none"> 
+            <span class=" logo">Benjamin<span style="color: #E71D36; font-size: 40px;">.</span></span>
+          </a>
+          <hr>
+
+          <div class="navbar ">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a href="#" class="text-white">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#about" class="text-white">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="#education" class="text-white">Education</a>
+              </li>
+              <li class="nav-item">
+                <a href="#experience" class="text-white">Experience</a>
+              </li>
+              <li class="nav-item">
+                <a href="#projects" class="text-white">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a href="#hobbies" class="text-white">Hobbies</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contact" class="text-white">Contact</a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="nav-social-link">
+            <a href="https://www.linkedin.com/in/ovioisa-oisamaye-benjamin-93998019b" target="_blank" class="fs-5 text-white text-decoration-none"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/Oisamaye1" target="_blank" class="fs-5 text-white text-decoration-none"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="d-flex main flex-nowrap">
+
+      
+
+      <div class="body-empty-space flex-column flex-shrink-0" style="width: 5%;">
+      </div>
+      
+
+<!-- -----------------------Main body starts here----------------- -->
+      
+      <div class="main-container" style="min-width: 70%;">
+         
+        {% for message in get_flashed_messages() %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <i class="fa-solid fa-circle-check"></i> {{message}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+          
+
+        <div class="bg-light hero-box">
+          <div class="container-fluid hero-info py-5">
+            
+            <div class="menu-toggle">
+              <div class="hamburger">
+                <span></span>
+              </div>
+            </div>
+
+            <h4 style="color: #E71D36;">Hello, I'm</h4>
+            <br>
+            <h1 class="display-5 fw-bold">Ovioisa</h1>
+            <h1 class="display-5 fw-bold">Oisamaye Benjamin</h1>
+            <br>
+            <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+            <br>
+            <h3>Fullstack Developer</h3>
+          </div>
+          <div class="hero-img"></div>
+        </div>
+
+        <div class="call-to-action">
+          <a download href="../static/images/resume.pdf" class="text-white btn-1 text-decoration-none">DOWNLOAD RESUME</a>
+          <a href="https://github.com/Oisamaye1" target="_blank" class="text-white btn-2 text-decoration-none">VIEW PORTFOLIO</a>
+        </div>
+
+
+        <!-- About Section -->
+
+        <div id="about" class="bg-light p-3">
+          <div class="container-fluid py-5">
+            <h2 class="display-5 fw-bold">About</h2>
+            <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+            <br><br>
+            <h3 style="color: rgb(97, 97, 97);">Creative and Passionate</h3>
+            <br>
+            <p>I'm a highly motivated and enthusiastic full-stack web developer and I've developed my skills through various online courses and personal projects. I have a strong understanding of HTML, CSS, JavaScript, React, Node.js, Express, Python (Flask Framework), databases, and server-side architecture. I have excellent problem-solving skills and I'm always seeking new challenges to push my abilities. I am eager to apply my passion for web development to create visually appealing websites and tackle complex projects.</p>
+          </div>
+        </div>
+
+        <!-- Education Section -->
+
+        <div id="education" class="bg-light p-3">
+          <div class="container-fluid py-5">
+            <h2 class="display-5 fw-bold">Education</h2>
+            <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+            <br><br>
+            <h3 style="color: rgb(97, 97, 97);">Educations and Programs</h3>
+            <br><br>
+            
+            <div class="education-box">
+              {% for edu in education %}
+              <div class="education-item">
+                <h1>.</h1>
+                <p> {{edu["year"]}} </p>
+                <h3>{{edu["school"]}}</h3>
+                <h4 style="color: rgb(97, 97, 97);">{{edu["location"]}}</h4>
+                <h4 style="color: #151b25;">{{edu["degree"]}}</h4>
+              </div>   
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+         <!-- Experience Section -->
+
+         <div id="experience" class="bg-light p-3">
+          <div class="container-fluid py-5">
+            <h2 class="display-5 fw-bold">Experience</h2>
+            <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+            <br><br>
+            <h3 style="color: rgb(97, 97, 97);">Experience and Skills</h3>
+            <br><br>
+            
+            <div class="education-box">
+              {% for exp in experience %}
+              <div class="education-item">
+                <h1>.</h1>
+                <p style="color: rgb(97, 97, 97);">{{exp["year"]}}</p>
+                <h3>{{exp["role"]}}</h3>
+                <h4 style="color: rgb(97, 97, 97);">{{exp["company"]}}</h4>
+                <h4 style="color: rgb(97, 97, 97);">{{exp["location"]}}</h4>
+              </div>
+               {% endfor %}
+            </div>
+          </div>
+        </div>
+
+         <!-- project section -->
+
+         <div id="projects" class="bg-light p-3">
+          <div class="container-fluid py-5">
+            <h2 class="display-5 fw-bold">Projects</h2>
+            <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+            <br><br>
+            <h3 style="color: rgb(97, 97, 97);">Skilled & Experienced</h3>
+            <br><br>
+
+            <div class="projects-box">
+
+              <div href="#" class="project-item" style="background-image: url('../static/images/exercise\ app\ desktop.PNG'); background-size: cover; background-repeat: no-repeat;">
+                <div class="proj-it">
+                  <div class="project-slide py-3">
+                    <h3 class="fs-2 fw-bold">Exercise Generator App</h3>
+                    <p class="col-md-8">These app random generates exercises for the user and the activities of all users are recorded and stored on the SqlAlchemy database</p>
+                    <div class="proj-btn">
+                      <a href="https://exercise-app.herokuapp.com/get_exercise?"><button class="proj-btn-1"><i class="fa-solid fa-eye"></i> Live Project</button></a>
+                      <a href="https://github.com/Oisamaye1/exercise-app"><button class="proj-btn-2"><i class="fa-solid fa-code"></i> Source Code</button></a>
+                    </div>
+                    <br><br>
+
+                    <div class="proj-tech">
+                      <h4>Technologies used</h4>
+                      <ul>
+                        <li><i class="fa-solid fa-circle-check"></i>HTML5</li>
+                        <li><i class="fa-solid fa-circle-check"></i>CSS3</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Javascript</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Python (Flask)</li>
+                        <li><i class="fa-solid fa-circle-check"></i>SqlAlchemy</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+            </div>
+
+            <div>
+              <a href="https://github.com/Oisamaye1?tab=repositories"><button class="proj-show-more-btn">SHOW MORE</button></a>
+            </div>
+            <br><br>
+
+            <div class="skills">
+              <h2 class="display-5 fw-bold">Skills</h2>
+              <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+              <br><br>
+
+              <div class="skills-list-box">
+
+                <div class="skills-list" style="color: rgb(255, 255, 255);">
+                  <i class="fa-solid skills-list-icon fa-desktop"></i>
+                  <h3>Frontend Skills</h3>
+                  <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>Bootstrap</li>
+                    <li>Javascript</li>
+                    <li>React</li>
+                  </ul>
+                </div>
+
+                <div class="skills-list" style="color: rgb(255, 255, 255);">
+                  <i class="fa-solid skills-list-icon fa-database"></i>
+                  <h3>Backend Skills</h3>
+                  <ul>
+                    <li>Python (Flask)</li>
+                    <li>NodeJS</li>
+                    <li>MongoDB</li>
+                    <li>ExpressJS</li>
+                    <li>MySQL</li>
+                  </ul>
+                </div>
+
+                <div class="skills-list" style="color: rgb(255, 255, 255);">
+                  <i class="fa-solid skills-list-icon fa-toolbox"></i>
+                  <h3>Other Skills</h3>
+                  <ul>
+                    <li>Wordpress</li>
+                    <li>Git & Github</li>
+                    <li>OpenCV</li>
+                  </ul>
+                </div>
+
+                <div class="skills-list" style="color: rgb(255, 255, 255);">
+                  <i class="fa-solid skills-list-icon fa-palette"></i>
+                  <h3>Design Skills</h3>
+                  <ul>
+                    <li>Adobe Photoshop</li>
+                    <li>Adobe Illustrator</li>
+                    <li>Canva</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hobbies Section -->
+
+        <div id="hobbies" class="bg-light p-3">
+          <div class="container-fluid py-5">
+            <h2 class="display-5 fw-bold">Hobbies</h2>
+            <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+            <br><br>
+            <h3 style="color: rgb(97, 97, 97);">Cheerful & Enthusiastic</h3>
+            <br><br>
+
+            <div class="hobbies-icon">
+              <div class="hobbies-icon-box">
+                <i class="fa-solid fa-chalkboard"></i>
+                <p>LEARNING</p>
+              </div>
+              <div class="hobbies-icon-box">
+                <i class="fa-solid fa-gamepad"></i>
+                <p>GAMING</p>
+              </div>
+              <div class="hobbies-icon-box">
+                <i class="fa-solid fa-film"></i>
+                <p>MOVIE</p>
+              </div>
+              <div class="hobbies-icon-box">
+                <i class="fa-solid fa-car"></i>
+                <p>TRAVELLING</p>
+              </div>
+              <div class="hobbies-icon-box">
+                <i class="fa-solid fa-music"></i>
+                <p>MUSIC</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Section -->
+
+        <div id="contact" class="bg-light p-3">
+          <div class="container-fluid py-5">
+            <h2 class="display-5 fw-bold">Contact</h2>
+            <div style="width: 60px; padding: 2px; background-color: #E71D36;"></div>
+            <br><br>
+            <h3 style="color: rgb(97, 97, 97);">Send a message</h3>
+            <br><br>
+
+            <div class="contact-box">
+
+              <div class="contact-form">
+                <form action="/" method="post" >
+                  {{ form.name.label(class="form-label fs-5") }}
+                  {{ form.name(class="form-control ") }}
+                  <br>
+                  {{ form.email.label(class="form-label fs-5") }}
+                  {{form.email(class="form-control")}}
+                  <br>
+                  {{ form.message.label(class="form-label fs-5") }}
+                  {{form.message(class="form-control message")}}
+                  <br>
+                  {{form.submit(class="btn btn-dark fs-5")}}
+              </form>
+              </div>
+
+              <div class="contact-info">
+                <div class="contact-gradient">
+                    <h3 class="fs-2 fw-bold">Get in touch</h3>
+                    <h4 class="col-md-8 fs-5">All contact details are available</h4>
+                    <br>
+                    <p class="col-md-8 fs-6">E - ovibenz@gmail.com</p>
+                </div>
+              </div>  
+
+            </div>
+          <br>
+          </div>
+          <div class="copyright">
+            <p>©2023, Ovioisa Oisamaye Benjamin</p>
+          </div>
+        </div>
+
+      </div>
+    
+    </main>
+    <script src="../static/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/fccee44b03.js" crossorigin="anonymous"></script>
+  </body>
+</html>
